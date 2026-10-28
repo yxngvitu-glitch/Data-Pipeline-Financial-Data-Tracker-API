@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: crypto_tracker_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PROJECT_NAME=Crypto Tracker Pro
+      - FETCH_INTERVAL_SECONDS=30
+    restart: unless-stopped
